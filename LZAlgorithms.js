@@ -31,9 +31,10 @@ function btn_lz77_click_encode() {
 		searchStr = buffer.substring(0, lengthOfSearchingString);
 		while (searchInDictionary(searchStr) != -1){
 			lengthOfSearchingString+=1;
-			let newStr = searchStr = buffer.substring(0, lengthOfSearchingString);
+			let newStr = buffer.substring(0, lengthOfSearchingString);
 			if (newStr == searchStr)
 			 break;
+            searchStr = newStr;
 		}
 
 		let l = searchStr.length - 1;
@@ -59,7 +60,7 @@ function btn_lz77_click_encode() {
 		currentItteration+=1;
 
 	}
-		dictionary = (dictionary+searchStr).substring((dictionary+searchStr).length - lengthOfDictionary);
+
 		addValuesInTableLZ77(currentItteration, dictionary, buffer, unseenBuffer)
 }
 
@@ -176,7 +177,7 @@ function btn_lz78_click_decode() {
 	}
 }
 
-function btn_lz77_click_clear() {
+function btn_lz78_click_clear() {
 	clearTable('tbl_lz78_result_encode');
 	clearTable('tbl_lz78_result_decode');
 	hideTable('tbl_lz78_result_encode');
