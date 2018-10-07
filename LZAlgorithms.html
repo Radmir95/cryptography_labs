@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LZ77 and LZ78</title>
+	<script src="./LZAlgorithms.js" type="text/ecmascript"></script>
+	<link rel="stylesheet" type="text/css" href="./bootstrap.min.css">
+	<style type="text/css">
+		td + td,
+		th + th { border-left: 1px solid; }
+		tr + tr { border-top: 1px solid; }
+	</style>
+</head>
+<body>
+	<h2 style="text-align: center; margin-top: 40px;">LZ77 & LZ78 encode and decode program </h1>
+	<div style="margin-left: 30px;">
+		<p>Enter text</p>
+		<input type="t" id="tbx_enter_text" />
+		<br>
+		<p>LZ77</p>
+		<div>
+			<button onclick="btn_lz77_click_encode()">Encode</button>
+			<button onclick="btn_lz77_click_decode()">Decode</button>
+			<button onclick="btn_lz77_click_clear()">Clear results</button>
+		</div>
+
+		<p>LZ78</p>
+		<div>
+			<button onclick="btn_lz78_click_encode()">Encode</button>
+			<button onclick="btn_lz78_click_decode()">Decode</button>
+			<button onclick="btn_lz78_click_clear()">Clear results</button>
+		</div>
+	</div>
+
+<table id="tbl_lz77_result_encode" style="margin: 0 auto; width: 600px; border-collapse: collapse; border: 1px solid; visibility:hidden;" >
+	<tr>
+		<td style="text-align: center;">Itteration</td>
+		<td style="text-align: center;">Dictionary</td>
+		<td style="text-align: center;">Buffer</td>
+		<td style="text-align: center;">Unseen Buffer</td>
+		<td style="text-align: center;">Output</td>
+	</tr>
+</table>
+
+<table id="tbl_lz77_result_decode" style="margin: 0 auto; width: 600px; border-collapse: collapse; border: 1px solid;visibility:hidden;">
+	<tr>
+		<td style="text-align: center;">Input</td>
+		<td style="text-align: center;">Index</td>
+		<td style="text-align: center;">Decode</td>
+	</tr>
+</table>
+
+<table id="tbl_lz78_result_encode" style="margin: 0 auto; width: 600px; border-collapse: collapse; border: 1px solid; visibility:hidden;" >
+	<tr>
+		<td style="text-align: center;">Output</td>
+		<td style="text-align: center;">Index</td>
+		<td style="text-align: center;">String</td>
+	</tr>
+</table>
+
+<table id="tbl_lz78_result_decode" style="margin: 0 auto; width: 600px; border-collapse: collapse; border: 1px solid;visibility:hidden;">
+	<tr>
+		<td style="text-align: center;">Input</td>
+		<td style="text-align: center;">Index</td>
+		<td style="text-align: center;">Decode</td>
+	</tr>
+</table>
+
+</body>
+</html>
