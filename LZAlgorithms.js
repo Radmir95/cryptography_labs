@@ -100,6 +100,7 @@ function btn_lz77_click_clear() {
 function btn_lz78_click_encode() {
 	dictionary = [];
 	result = [];
+    resultLZ78 = [];
 
 	let output = []
 
@@ -114,22 +115,24 @@ function btn_lz78_click_encode() {
 
 		let char = inputString.substring(i, i+1);
 
-		let isInDict = false;
+		let isInDict = true;
 
 		let idx = 0;
 
-		while (!isInDict)
+		while (isInDict)
 		{
-			isInDict = true;
+			isInDict = false;
 
 			for (let j = 0; j < dictionary.length; j++)
 			{
 				let val = dictionary[j];
 				if (char == val){
 					idx = dictionary.indexOf(val)+1;
-					isInDict = false;
+					isInDict = true;
 					i++;
-					char += inputString.substring(i, i+1);
+                    newChar = inputString.substring(i, i+1);
+                    if (newChar == '') isInDict = false;
+					char += newChar;
 					break;
 				}
 
@@ -171,9 +174,7 @@ function btn_lz78_click_decode() {
 			dict.push(dict[idx-1] + char);
 
 			addValuesInTableLZ78Decode(char, '( ' + idx + ' , ' + char.substring(char.length-1) + ' )');
-
 		}
-
 	}
 }
 
