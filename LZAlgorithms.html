@@ -14,19 +14,19 @@
 	<h2 style="text-align: center; margin-top: 40px;">LZ77 & LZ78 encode and decode program </h1>
 	<div style="margin-left: 30px;">
 		<p>Enter text</p>
-		<input type="t" id="tbx_enter_text" />
+		<input type="text" id="tbx_enter_text" />
 		<br>
         <br>
 		<p>LZ77</p>
 		<div>
-			<button onclick="btn_lz77_click_encode()">Encode</button>
+			<button onclick="btn_lz77_click_encode(document.getElementById('tbx_enter_text').value)">Encode</button>
 			<button onclick="btn_lz77_click_decode()">Decode</button>
 			<button onclick="btn_lz77_click_clear()">Clear results</button>
 		</div>
         <br>
 		<p>LZ78</p>
 		<div>
-			<button onclick="btn_lz78_click_encode()">Encode</button>
+			<button onclick="btn_lz78_click_encode(document.getElementById('tbx_enter_text').value)">Encode</button>
 			<button onclick="btn_lz78_click_decode()">Decode</button>
 			<button onclick="btn_lz78_click_clear()">Clear results</button>
 		</div>
@@ -64,6 +64,28 @@
 		<td style="text-align: center;">Index</td>
 	</tr>
 </table>
+    
+<!--
+<script>
+    var control = document.getElementById("your-files");
+    control.addEventListener("change", function(event) {
+        var file = files = control.files[0];
+        var reader = new FileReader();
+        reader.onload = function(event) {
+            var contents = event.target.result;
+            lz77_encode_to_file(contents);
+            
+            
+        };
 
+        reader.onerror = function(event) {
+            console.error("Файл не может быть прочитан! код " + event.target.error.code);
+        };
+        reader.readAsText(file);
+    }, false);
+</script>
+-->
+    
 </body>
+    
 </html>

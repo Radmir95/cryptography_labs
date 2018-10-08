@@ -3,13 +3,13 @@ let dictionary = '';
 let result = [];
 let resultLZ78 = [];
 
-function btn_lz77_click_encode() {
+function btn_lz77_click_encode(input) {
 
 	dictionary = '';
 	result = [];
 
 	let output = []
-	let inputString = document.getElementById('tbx_enter_text').value;
+	let inputString = input;
 
 	clearTable('tbl_lz77_result_encode');
 	showTable('tbl_lz77_result_encode');
@@ -97,14 +97,14 @@ function btn_lz77_click_clear() {
 }
 
 
-function btn_lz78_click_encode() {
+function btn_lz78_click_encode(input) {
 	dictionary = [];
 	result = [];
     resultLZ78 = [];
 
 	let output = []
 
-	let inputString = document.getElementById('tbx_enter_text').value;
+	let inputString = input;
 
 	clearTable('tbl_lz78_result_encode');
 	showTable('tbl_lz78_result_encode');
